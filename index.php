@@ -145,7 +145,7 @@ if($checkExecuted == TRUE)
 //  HTML OUTPUT
 $checkOutput='';
 $refreshCookie='';
-$stylefile='frontend.css';
+$stylefile='style.css';
 $downTime = FALSE;
 $textNotFound = FALSE;
 

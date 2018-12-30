@@ -1,0 +1,43 @@
+html {
+    }
+body {
+    font-size: 14px;
+    font-family: OpenSans-Light,  Verdana,  sans-serif,  Arial;
+    margin: 0 auto;
+    color: #4d5157;
+    background-color: #fff;
+}
+
+
+b.err {
+   color:red;
+   background:yellow;
+      animation: blink 1s steps(5, start) infinite;
+      -webkit-animation: blink 1s steps(5, start) infinite;
+}
+
+b.ok {
+  color:green;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+   }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+   }
+}
+
+progress {
+ width:5em;
+}
+
+#main-container {
+    overflow: auto;
+    margin-top: 60px;
+    background-color: #fff;
+    padding: 20px 25px;
+}
