@@ -1,0 +1,74 @@
+[
+     {
+        "address": "www.andrija1987.si",
+        "type": "host",
+        "findString": "443",
+        "timeout": 3,
+        "checkInterval": 600,
+        "lastCheck": 1501285724,
+        "lastResultDuration": "181",
+        "lastResultConnection": "ConnectOK",
+        "lastResultString": "",
+        "emailNotification": "andrija.barbarosa@gmail.com"
+	},
+    {
+        "address": "zelenisvet.com",
+        "type": "host",
+        "findString": "443",
+        "timeout": 3,
+        "checkInterval": 600,
+        "lastCheck": 1501285724,
+        "lastResultDuration": "181",
+        "lastResultConnection": "ConnectOK",
+        "lastResultString": "",
+        "emailNotification": "andrija.barbarosa@gmail.com"
+	},
+    {
+        "address": "trgovina.zelenisvet.com",
+        "type": "host",
+        "findString": "443",
+        "timeout": 3,
+        "checkInterval": 600,
+        "lastCheck": 1501285724,
+        "lastResultDuration": "181",
+        "lastResultConnection": "ConnectOK",
+        "lastResultString": "",
+        "emailNotification": "andrija.barbarosa@gmail.com"
+	},    
+	{
+        "address": "kreativni-direktor.com",
+        "type": "host",
+        "findString": "443",
+        "timeout": 3,
+        "checkInterval": 600,
+        "lastCheck": 1501285724,
+        "lastResultDuration": "181",
+        "lastResultConnection": "ConnectOK",
+        "lastResultString": "",
+        "emailNotification": "andrija.barbarosa@gmail.com"
+	},    
+    {
+        "address": "www.andrija1987.si",
+        "type": "host",
+        "findString": "443",
+        "timeout": 3,
+        "checkInterval": 600,
+        "lastCheck": 1501285724,
+        "lastResultDuration": "181",
+        "lastResultConnection": "ConnectOK",
+        "lastResultString": "",
+        "emailNotification": "andrija.barbarosa@gmail.com"
+	},
+	{
+        "address": "rpi.andrija1987.si",
+        "type": "host",
+        "findString": "80",
+        "timeout": 3,
+        "checkInterval": 600,
+        "lastCheck": 1501285724,
+        "lastResultDuration": "181",
+        "lastResultConnection": "ConnectOK",
+        "lastResultString": "",
+        "emailNotification": "andrija.barbarosa@gmail.com"
+	}
+]
