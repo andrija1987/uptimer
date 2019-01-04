@@ -1,5 +1,7 @@
-[
+{
+    "servers":[
      {
+	    "id": 1,
         "address": "www.andrija1987.si",
         "type": "host",
         "findString": "443",
@@ -12,6 +14,7 @@
         "emailNotification": "andrija.barbarosa@gmail.com"
 	},
     {
+	    "id": 2,
         "address": "zelenisvet.com",
         "type": "host",
         "findString": "443",
@@ -24,6 +27,7 @@
         "emailNotification": "andrija.barbarosa@gmail.com"
 	},
     {
+	    "id": 3,
         "address": "trgovina.zelenisvet.com",
         "type": "host",
         "findString": "443",
@@ -36,6 +40,7 @@
         "emailNotification": "andrija.barbarosa@gmail.com"
 	},    
 	{
+		"id": 4,
         "address": "kreativni-direktor.com",
         "type": "host",
         "findString": "443",
@@ -48,6 +53,7 @@
         "emailNotification": "andrija.barbarosa@gmail.com"
 	},    
     {
+	    "id": 5,
         "address": "www.andrija1987.si",
         "type": "host",
         "findString": "443",
@@ -70,5 +76,6 @@
         "lastResultConnection": "ConnectOK",
         "lastResultString": "",
         "emailNotification": "andrija.barbarosa@gmail.com"
-	}
-]
+		}
+	]
+}

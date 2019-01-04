@@ -41,3 +41,9 @@ progress {
     background-color: #fff;
     padding: 20px 25px;
 }
+
+.time {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

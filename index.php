@@ -1,6 +1,7 @@
 <?php
 date_default_timezone_set('UTC');
 
+
 // extensions check
 if (!extension_loaded('curl'))
 	die('"curl" extension not loaded or installed :( ');
@@ -83,31 +84,19 @@ function url_check($url, $string='<html', $connect_timeout=5) {
 
 // ----  begin output processing ----
 
-// initialize and fetch DB
-$db = 'db.json';
+// initialize and fetch DB 
+/*$db = 'db.json';
 if (!file_exists('db.json'))
    touch('db.json');
-$json = json_decode(file_get_contents($db));
+$json = json_decode(file_get_contents($db)); */
 
-/*$con=mysqli_connect("localhost","root","Lokarda7!","uptimer");
-
-  // Check connection
-  if (mysqli_connect_errno())
-  {
-   echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-
-  $query = "SELECT * FROM uptimer";
-
-  $json= mysqli_query($con,$query);
-
-  $rows = array();
-  while($r = mysqli_fetch_array($result)) {
-    $rows[] = $r;
-  }
-  echo json_encode($rows);
-
-  mysqli_close($con);*/
+// pdo mysql andrija1987 added
+$pdo = new PDO("mysql:dbname=uptimer;host=localhost", "root", "Lokarda7!");
+$statement = $pdo->prepare("SELECT * FROM servers ORDER BY id ASC");
+$statement->execute();
+$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+$jsondata = json_encode($results);
+$json = json_decode($jsondata);
   
 
 //  let's loop in the checks
@@ -223,30 +212,51 @@ print <<<EOT
 
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">{uptimer}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="vue/index.php">vue</a>
+            </li>
+            <!--<li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown07">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>-->
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<div class="highlight-clean">
         <div class="box container" id="main-container">
+      <br> <div class="time" style="position: fixed;
+    bottom: 50px;
+    width: 100%;">
 EOT;
-
-// downtime ? Let's play some fancy music !
-/*if ($downTime == TRUE) {
-print <<<EOT
-<audio controls autoplay loop><source src="alarm.ogg" type="audio/ogg"></audio><br>
-EOT;
-}
-
-// a text not found ? Some calmer tunes
-if ($textNotFound == TRUE) {
-print <<<EOT
-<audio controls autoplay><source src="textnotfound.ogg" type="audio/ogg"></audio><br>
-EOT;
-}*/
-
 // proceed with the rest of the page
 $pageCall=date(DATE_ATOM, time());
       print <<<EOT
 {$pageCall} &nbsp;
 
-         <button class="btn btn-primary" type="button" onclick="document.location.reload(true)">reload</button>
-         <button class="btn btn-warning" onclick="document.cookie = 'refresh=10;expires=0;';location.reload(true);">reload every 10s</button>
+</div>
+
+		<div class="buttons" style="text-align:center;"><button class="btn btn-primary" type="button" onclick="document.location.reload(true)">reload</button>
+   <button class="btn btn-warning" onclick="document.cookie = 'refresh=10;expires=0;';location.reload(true);">reload every 10s</button>
+</div>
+         
+         
             <div class="box-content container">
                 <table class="table" style="margin-top:20px;">
  <thead>
